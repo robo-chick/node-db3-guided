@@ -4,9 +4,8 @@ Guided project for **Node DB 3** Module.
 
 ## Prerequisites
 
-- [DB Browser for SQLite](https://sqlitebrowser.org) installed.
+- [TablePlus](https://tableplus.com) installed.
 - A rest client like [Insomnia](https://insomnia.rest/download/) or [Postman](https://www.getpostman.com/downloads/) installed.
-- [This Query Tool Loaded in the browser](https://www.w3schools.com/Sql/tryit.asp?filename=trysql_select_top).
 
 ## Project Setup
 
