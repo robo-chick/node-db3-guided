@@ -1,5 +1,6 @@
 const express = require("express")
 const db = require("../data/config")
+const userModel = require("./user-model")
 const { validateUserId } = require("./user-middleware")
 
 const router = express.Router()
@@ -49,6 +50,16 @@ router.delete("/users/:id", validateUserId(), async (req, res, next) => {
 		await db("users").where({ id }).del()
 
 		res.status(204).end()
+	} catch(err) {
+		next(err)
+	}
+})
+
+// create an endpoint for listing a user's posts
+router.get("/users/:id/posts", validateUserId(), async (req, res, next) => {
+	try {
+		const posts = await userModel.findPostsByUserId(req.params.id)
+		res.json(posts)
 	} catch(err) {
 		next(err)
 	}
